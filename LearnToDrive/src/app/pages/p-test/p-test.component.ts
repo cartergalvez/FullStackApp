@@ -9,7 +9,7 @@ import { GoogleSheet } from 'src/app/interfaces/google-sheet';
 })
 export class PTestComponent implements OnInit {
   displayQuestion: GoogleSheet;
-   aC = 0;
+  
   constructor(private dServ: DataService) { }
 
   ngOnInit() {
@@ -17,8 +17,9 @@ export class PTestComponent implements OnInit {
     console.log(this.displayQuestion);
   }
 
-  nextQuestion(id){
-    this.displayQuestion = this.dServ.getNextQuestion(id);
+  nextQuestion(){
+    this.displayQuestion = this.dServ.getNextQuestions();
+    
   }
 
 

@@ -5,5 +5,5 @@ export interface GoogleSheet {
     a2:string;
     a3:string;
     a4:string;
-    corrcet:number;
+    correct:string;
 }
