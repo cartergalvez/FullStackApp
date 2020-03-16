@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { GoogleSheet } from '../interfaces/google-sheet';
+import { PTestComponent } from '../pages/p-test/p-test.component';
 
 @Injectable({
   providedIn: 'root'
@@ -42,7 +43,6 @@ export class DataService {
   getNextQuestions(): GoogleSheet {
     this.counter++;
     return this.questions[this.counter]
-
   }
 
 

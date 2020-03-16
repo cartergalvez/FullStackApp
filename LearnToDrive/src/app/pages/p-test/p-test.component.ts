@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/serivecs/data.service';
 import { GoogleSheet } from 'src/app/interfaces/google-sheet';
+import { __values } from 'tslib';
+import { VirtualTimeScheduler } from 'rxjs';
 
 @Component({
   selector: 'app-p-test',
@@ -9,7 +11,7 @@ import { GoogleSheet } from 'src/app/interfaces/google-sheet';
 })
 export class PTestComponent implements OnInit {
   displayQuestion: GoogleSheet;
-  
+  aCouter = 0;
   constructor(private dServ: DataService) { }
 
   ngOnInit() {
@@ -18,9 +20,21 @@ export class PTestComponent implements OnInit {
   }
 
   nextQuestion(){
-    this.displayQuestion = this.dServ.getNextQuestions();
+   this.displayQuestion = this.dServ.getNextQuestions();
+  
+  }
+
+  checkQuestion(answer) {
+    if (answer == this.displayQuestion.correct) {
+        this.aCouter++;
+        console.log(this.aCouter);
+    } else {
+      alert('wrong');
+    }
+    this.nextQuestion();
     
   }
+
 
 
 }
