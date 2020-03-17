@@ -10,7 +10,8 @@ export class DataService {
   parseURL;
   questions: GoogleSheet[] = []
   counter = 0;
-  aCount = 0;
+  score = 0;
+  
   private url = "https://spreadsheets.google.com/feeds/list/1E0N0CqYudowd2O6ni7WmEs-dn76j3j7OvnuxEfsSzT4/1/public/full?alt=json"
   constructor(private http: HttpClient) {
     this.parseDate();
@@ -42,6 +43,7 @@ export class DataService {
 
   getNextQuestions(): GoogleSheet {
     this.counter++;
+    
     return this.questions[this.counter]
   }
 

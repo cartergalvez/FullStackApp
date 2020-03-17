@@ -10,6 +10,7 @@ import { MainComponent } from './main/main.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { PTestComponent } from './pages/p-test/p-test.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EndscreenComponent } from './pages/endscreen/endscreen.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     MainComponent,
     HomePageComponent,
-    PTestComponent
+    PTestComponent,
+    EndscreenComponent
   ],
   imports: [
     BrowserModule,

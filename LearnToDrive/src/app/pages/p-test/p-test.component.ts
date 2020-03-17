@@ -3,6 +3,7 @@ import { DataService } from 'src/app/serivecs/data.service';
 import { GoogleSheet } from 'src/app/interfaces/google-sheet';
 import { __values } from 'tslib';
 import { VirtualTimeScheduler } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-p-test',
@@ -11,9 +12,10 @@ import { VirtualTimeScheduler } from 'rxjs';
 })
 export class PTestComponent implements OnInit {
   displayQuestion: GoogleSheet;
-  private isButtonVisible = false;
   aCouter = 0;
-  constructor(private dServ: DataService) { }
+  constructor(private dServ: DataService, private router: Router) { 
+    console.log(this.displayQuestion);
+  }
 
   ngOnInit() {
     this.displayQuestion = this.dServ.getFirstQuestion();
@@ -31,15 +33,17 @@ export class PTestComponent implements OnInit {
   checkQuestion(answer) {
      
       if (answer == this.displayQuestion.correct) {
-        this.aCouter++;
+        this.dServ.score++
         console.log(this.aCouter);
+        this.aCouter = this.dServ.score;
       } 
     if(this.dServ.counter < 34){
       this.nextQuestion();
       }
       else{
-
-        this.isButtonVisible = true;
+        this.dServ.counter = 0;
+      this.router.navigate(['/endScreen']);
+      
       }
     }
 
