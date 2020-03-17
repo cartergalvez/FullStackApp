@@ -11,6 +11,7 @@ import { VirtualTimeScheduler } from 'rxjs';
 })
 export class PTestComponent implements OnInit {
   displayQuestion: GoogleSheet;
+  private isButtonVisible = false;
   aCouter = 0;
   constructor(private dServ: DataService) { }
 
@@ -19,22 +20,31 @@ export class PTestComponent implements OnInit {
     console.log(this.displayQuestion);
   }
 
-  nextQuestion(){
-   this.displayQuestion = this.dServ.getNextQuestions();
-  
+  nextQuestion() {
+
+
+    this.displayQuestion = this.dServ.getNextQuestions();
   }
+
+
 
   checkQuestion(answer) {
-    if (answer == this.displayQuestion.correct) {
+     
+      if (answer == this.displayQuestion.correct) {
         this.aCouter++;
         console.log(this.aCouter);
-    } else {
-      alert('wrong');
+      } 
+    if(this.dServ.counter < 34){
+      this.nextQuestion();
+      }
+      else{
+
+        this.isButtonVisible = true;
+      }
     }
-    this.nextQuestion();
-    
+
   }
 
 
 
-}
+
