@@ -1,8 +1,10 @@
 <h1>GamePage</h1>
 <h4>{{displayQuestion.questions}}</h4>
+<div class="col-lg d-flex align-items-center">
 
-<button  (click)="checkQuestion(displayQuestion.a1)">{{displayQuestion.a1}}</button>
-<button  (click)="checkQuestion(displayQuestion.a2)">{{displayQuestion.a2}}</button>
-<button  (click)="checkQuestion(displayQuestion.a3)">{{displayQuestion.a3}}</button>
-<button  (click)="checkQuestion(displayQuestion.a4)">{{displayQuestion.a4}}</button>
-
+    <button class="button button1" (click)="checkQuestion(displayQuestion.a1)">{{displayQuestion.a1}}</button>
+    <button class="button button1" (click)="checkQuestion(displayQuestion.a2)">{{displayQuestion.a2}}</button>
+    <button class="button button1" (click)="checkQuestion(displayQuestion.a3)">{{displayQuestion.a3}}</button>
+    <button class="button button1" (click)="checkQuestion(displayQuestion.a4)">{{displayQuestion.a4}}</button>
+</div>
+    

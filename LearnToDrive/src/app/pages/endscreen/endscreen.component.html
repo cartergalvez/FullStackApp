@@ -1,3 +1,12 @@
-    <p>{{score}}</p>
-    <button routerLink="/gamePage">Restart </button>
-    <button routerLink="/home">Go home</button>
+<div class="container d-flex justify-content-center">
+    <div class="row">
+        <div class="col">
+            <div *ngIf="score >= 29; else elseBlock">good job you passed</div>
+            <ng-template #elseBlock>You Failed</ng-template>
+            <p>Your score was {{score}} / 35</p>
+            <button class="button button1" routerLink="/gamePage">Restart </button>
+            <button class="button button2" routerLink="/TestPage">Go Back To Test Page</button>
+        </div>
+    </div>
+
+</div>

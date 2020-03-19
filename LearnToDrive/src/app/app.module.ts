@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -11,6 +12,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { PTestComponent } from './pages/p-test/p-test.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EndscreenComponent } from './pages/endscreen/endscreen.component';
+import { TestingPageComponent } from './pages/testing-page/testing-page.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { EndscreenComponent } from './pages/endscreen/endscreen.component';
     MainComponent,
     HomePageComponent,
     PTestComponent,
-    EndscreenComponent
+    EndscreenComponent,
+    TestingPageComponent
   ],
   imports: [
     BrowserModule,
