@@ -21,7 +21,7 @@ export class PTestComponent implements OnInit {
     this.displayQuestion = this.dServ.getFirstQuestion();
     console.log(this.displayQuestion);
   }
-
+  
   nextQuestion() {
 
 
@@ -36,6 +36,8 @@ export class PTestComponent implements OnInit {
         this.dServ.score++
         console.log(this.aCouter);
         this.aCouter = this.dServ.score;
+      }else{
+        this.myToast();
       } 
     if(this.dServ.counter < 34){
       this.nextQuestion();
@@ -47,7 +49,13 @@ export class PTestComponent implements OnInit {
       }
     }
 
+  myToast() {
+    var x = document.getElementById("snackbar");
+    x.className = "show";
+    setTimeout(function () { x.className = x.className.replace("show", ""); }, 2000);
   }
+
+}
 
 
 
