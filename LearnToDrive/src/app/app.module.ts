@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { EndscreenComponent } from './pages/endscreen/endscreen.component';
 import { TestingPageComponent } from './pages/testing-page/testing-page.component';
 import { InfoComponent } from './pages/info/info.component';
+import { BTWComponent } from './pages/btw/btw.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { InfoComponent } from './pages/info/info.component';
     PTestComponent,
     EndscreenComponent,
     TestingPageComponent,
-    InfoComponent
+    InfoComponent,
+    BTWComponent
   ],
   imports: [
     BrowserModule,
