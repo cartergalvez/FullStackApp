@@ -14,6 +14,7 @@ import { EndscreenComponent } from './pages/endscreen/endscreen.component';
 import { TestingPageComponent } from './pages/testing-page/testing-page.component';
 import { InfoComponent } from './pages/info/info.component';
 import { BTWComponent } from './pages/btw/btw.component';
+import { GuideBookComponent } from './pages/guide-book/guide-book.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BTWComponent } from './pages/btw/btw.component';
     EndscreenComponent,
     TestingPageComponent,
     InfoComponent,
-    BTWComponent
+    BTWComponent,
+    GuideBookComponent
   ],
   imports: [
     BrowserModule,

@@ -7,7 +7,7 @@ import { BTW } from '../interfaces/btw';
 export class BtwDataService {
   Questions: BTW [] = [
     {
-      img:"../../../assets/Pics/Screen Shot 2020-03-30 at 3.51.07 PM.png",
+      img:"",
     questions: "q1",
     a1:"a1",
     a2: "aa2",
