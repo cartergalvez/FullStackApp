@@ -8,11 +8,11 @@ import { BTW } from 'src/app/interfaces/btw';
   styleUrls: ['./btw.component.scss']
 })
 export class BTWComponent implements OnInit {
-  Questions: BTW[];
+  Pics: BTW[];
   constructor(private BtwServ: BtwDataService) { }
 
   ngOnInit() {
-   this.Questions = this.BtwServ.getQuestions();
+    this.Pics = this.BtwServ.pics;
   }
 
 }

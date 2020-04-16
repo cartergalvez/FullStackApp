@@ -1,48 +1,53 @@
-<div class="container text-center">
-    <input type="checkbox" id="c1">
-    <input type="checkbox" id="c2">
-    <input type="checkbox" id="c3">
-    <div id="cover">
-        <img src="../../../assets/Pics/Blind spot.png">
-    </div>
-    <div class="page-container">
-        <div class="page" id="p1">
-            <div class="back">
-                <img src="../../../assets/Pics/Light With arrows .png">
-                <label class="back-btn" for="c1">Back</label>
+<div class="container">
+
+    <ngb-carousel *ngIf="images">
+        <ng-template ngbSlide>
+            <div class="row">
+                <div class="col">
+            
+                    <div class="picsum-img-wrapper">
+                        <img src="../../../assets/Pics/Light With arrows .png" alt="Random third slide">
+                    </div>
+                </div>
+                <div class="col">
+            
+                    <p>1111111 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque dolorum incidunt tempora sapiente
+                        reiciendis aliquid, explicabo voluptate blanditiis vitae, illo suscipit assumenda perspiciatis
+                        libero ex velit voluptas omnis ullam sequi!</p>
+                </div>
             </div>
-            <div class="front">
-                <h2>Title</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem neque dolore numquam quis
-                    dignissimos illo, animi accusamus incidunt mollitia ipsam sunt hic eum officiis est itaque, culpa
-                    illum, obcaecati rem.</p>
-                <label class="next-btn" for="c1">Next</label>
+        </ng-template>
+        <ng-template ngbSlide>
+            <div class="row">
+                <div class="col">
+            
+                    <div class="picsum-img-wrapper">
+                        <img src="../../../assets/Pics/tire tips.png" alt="Random third slide">
+                    </div>
+                </div>
+                <div class="col">
+            
+                    <p>22222 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque dolorum incidunt tempora sapiente
+                        reiciendis aliquid, explicabo voluptate blanditiis vitae, illo suscipit assumenda perspiciatis
+                        libero ex velit voluptas omnis ullam sequi!</p>
+                </div>
             </div>
-        </div>
-        <div class="page" id="p2">
-            <div class="back">
-                <img src="..'/../../../../assets/Pics/tire tips.png'">
-                <label class="back-btn" for="c2">Back</label>
+        </ng-template>
+        <ng-template ngbSlide>
+            <div class="row">
+                <div class="col">
+
+                    <div class="picsum-img-wrapper">
+                        <img src="../../../assets/Pics/Blind spot.png" alt="Random third slide">
+                    </div>
+                </div>
+                <div class="col">
+
+                    <p>333333 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque dolorum incidunt tempora sapiente
+                        reiciendis aliquid, explicabo voluptate blanditiis vitae, illo suscipit assumenda perspiciatis
+                        libero ex velit voluptas omnis ullam sequi!</p>
+                </div>
             </div>
-            <div class="front">
-                <h2>Title</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem neque dolore numquam quis
-                    dignissimos illo, animi accusamus incidunt mollitia ipsam sunt hic eum officiis est itaque, culpa
-                    illum, obcaecati rem.</p>
-                <label class="next-btn" for="c2">Next</label>
-            </div>
-        </div>
-        <div class="page" id="p3">
-            <div class="back">
-                <label class="back-btn" for="c3">Back</label>
-            </div>
-            <div class="back">
-                <h2>End</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem neque dolore numquam quis
-                    dignissimos illo, animi accusamus incidunt mollitia ipsam sunt hic eum officiis est itaque, culpa
-                    illum, obcaecati rem.</p>
-                <label class="next-btn" for="c3">Next</label>
-            </div>
-        </div>
-    </div>
+        </ng-template>
+    </ngb-carousel>
 </div>
