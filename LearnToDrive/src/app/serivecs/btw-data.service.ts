@@ -22,8 +22,8 @@ export class BtwDataService {
         console.log(x);
         for (const s of x.feed.entry) {
           const nFo: BTW = {
-            img: s.gsx$pics.$t
-
+            img: s.gsx$pics.$t,
+            text: s.gsx$text.$t
           }; this.pics.push(nFo);
         } console.log(this.pics);
       }

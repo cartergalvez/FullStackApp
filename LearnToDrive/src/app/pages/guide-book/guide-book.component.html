@@ -1,53 +1,19 @@
 <div class="container">
 
     <ngb-carousel *ngIf="images">
-        <ng-template ngbSlide>
+        <ng-template ngbSlide *ngFor='let p of Pics'>
             <div class="row">
                 <div class="col">
             
                     <div class="picsum-img-wrapper">
-                        <img src="../../../assets/Pics/Light With arrows .png" alt="Random third slide">
+                        <img src="../../../assets/Pics/{{p.img}}" class="hero" alt="Random third slide">
                     </div>
                 </div>
                 <div class="col">
             
-                    <p>1111111 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque dolorum incidunt tempora sapiente
-                        reiciendis aliquid, explicabo voluptate blanditiis vitae, illo suscipit assumenda perspiciatis
-                        libero ex velit voluptas omnis ullam sequi!</p>
+                    <p> {{p.text}} </p>
                 </div>
             </div>
-        </ng-template>
-        <ng-template ngbSlide>
-            <div class="row">
-                <div class="col">
-            
-                    <div class="picsum-img-wrapper">
-                        <img src="../../../assets/Pics/tire tips.png" alt="Random third slide">
-                    </div>
-                </div>
-                <div class="col">
-            
-                    <p>22222 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque dolorum incidunt tempora sapiente
-                        reiciendis aliquid, explicabo voluptate blanditiis vitae, illo suscipit assumenda perspiciatis
-                        libero ex velit voluptas omnis ullam sequi!</p>
-                </div>
-            </div>
-        </ng-template>
-        <ng-template ngbSlide>
-            <div class="row">
-                <div class="col">
-
-                    <div class="picsum-img-wrapper">
-                        <img src="../../../assets/Pics/Blind spot.png" alt="Random third slide">
-                    </div>
-                </div>
-                <div class="col">
-
-                    <p>333333 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque dolorum incidunt tempora sapiente
-                        reiciendis aliquid, explicabo voluptate blanditiis vitae, illo suscipit assumenda perspiciatis
-                        libero ex velit voluptas omnis ullam sequi!</p>
-                </div>
-            </div>
-        </ng-template>
+        </ng-template>   
     </ngb-carousel>
-</div>
+</div> 
