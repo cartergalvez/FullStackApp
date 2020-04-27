@@ -12,7 +12,7 @@ import { PTestComponent } from './pages/p-test/p-test.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EndscreenComponent } from './pages/endscreen/endscreen.component';
 import { TestingPageComponent } from './pages/testing-page/testing-page.component';
-import { InfoComponent } from './pages/info/info.component';
+
 import { BTWComponent } from './pages/btw/btw.component';
 import { GuideBookComponent } from './pages/guide-book/guide-book.component';
 
@@ -26,7 +26,6 @@ import { GuideBookComponent } from './pages/guide-book/guide-book.component';
     PTestComponent,
     EndscreenComponent,
     TestingPageComponent,
-    InfoComponent,
     BTWComponent,
     GuideBookComponent
   ],

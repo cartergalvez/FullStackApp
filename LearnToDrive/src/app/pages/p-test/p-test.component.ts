@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/serivecs/data.service';
-import { GoogleSheet } from 'src/app/interfaces/google-sheet';
 import { __values } from 'tslib';
 import { VirtualTimeScheduler } from 'rxjs';
 import { Router } from '@angular/router';
@@ -11,10 +10,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./p-test.component.scss']
 })
 export class PTestComponent implements OnInit {
-  displayQuestion: GoogleSheet;
+  displayQuestion;
   aCouter = 0;
   constructor(private dServ: DataService, private router: Router) { 
-    console.log(this.displayQuestion);
+   
   }
 
   ngOnInit() {
@@ -23,8 +22,6 @@ export class PTestComponent implements OnInit {
   }
   
   nextQuestion() {
-
-
     this.displayQuestion = this.dServ.getNextQuestions();
   }
 
