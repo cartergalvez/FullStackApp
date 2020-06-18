@@ -2,17 +2,18 @@
     <div class="row">
         <div class="col">
             <h2>Hi, Welcome To Learn How to Drive</h2>
-            <p>Please click a button below to choice test or learn.</p>
+            <p>Please click a button below to login or Go to the GuideBook.</p>
         </div>
     </div>
     <div class="row">
         <div class="col myBox">
-            <p>Please click the button below to see what practice test you can take</p>
-            <button class="btn btn-success"routerLink="/TestPage">Test Page</button>
+            <p>{{isLoggedIn ? 'Click button to go to test page' : 'Please login before taking test'}}</p>
+            <!-- <button class="btn btn-success"routerLink="/TestPage">Test</button> -->
+            <button class="btn btn-success" (click)="isAbleToTest()">{{isLoggedIn ? 'Test' : 'Login'}}</button>
         </div>
         <div class="col myBox">
-            <p>Please click the button below to see Some Info I think is useful</p>
-            <button class="btn btn-success"routerLink="/GuideBook">Info</button>
+            <p>Here is some Info I think is useful</p>
+            <button class="btn btn-success"routerLink="/GuideBook">GuideBook</button>
         </div>
     </div>
 

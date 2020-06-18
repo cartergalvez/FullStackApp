@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/serivecs/data.service';
+import { DataService } from 'src/app/services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -7,10 +8,14 @@ import { DataService } from 'src/app/serivecs/data.service';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
-
-  constructor(private dServ: DataService) { }
+  isLoggedIn = this.dServ.isLoggedIn;
+  constructor(private dServ: DataService , private router: Router) { }
 
   ngOnInit() {
+  }
+
+  isAbleToTest(){
+      !this.dServ.isLoggedIn ? this.router.navigate(['Login']) : this.router.navigate(['TestPage']);
   }
 
 }

@@ -14,10 +14,15 @@
   background-color: #4CAF50;
   color: white;
 }
-.myBox {
-  width: 300px;
-  height: 100px;  
-  padding: 50px;
-  border: 1px solid red;
-  box-sizing: border-box;
+
+
+.myBox{
+  background-color: lightgrey;
+width: 300px;
+border: 15px solid green;
+padding: 50px;
+margin: 20px;
+}
+.myBg{
+  background-color: yellow;
 }

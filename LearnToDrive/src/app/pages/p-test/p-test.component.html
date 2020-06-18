@@ -1,11 +1,24 @@
-<h1>GamePage</h1>
-<h4>{{displayQuestion.questions}}</h4>
+<div class="container-fluid  my-5">
+    <div class="card my-color">
 
-<div class="col-lg d-flex align-items-center">
-    <button class="button button1" (click)="checkQuestion(displayQuestion.a1)">{{displayQuestion.a1}}</button>
-    <button class="button button1" (click)="checkQuestion(displayQuestion.a2)">{{displayQuestion.a2}}</button>
-    <button class="button button1" (click)="checkQuestion(displayQuestion.a3)">{{displayQuestion.a3}}</button>
-    <button class="button button1" (click)="checkQuestion(displayQuestion.a4)">{{displayQuestion.a4}}</button>
-    <div id="snackbar">Incorrect</div>
-</div>
-    
+        <div class="row" *ngIf="displayQuestion">
+            <div class="col-10 offset-1">
+                <h1>TEST</h1>
+                <h4>{{displayQuestion.questions}}</h4>
+                <div class="col-lg d-flex align-items-center">
+                    <button class="button button1 shadow-none" aria-disabled="true" 
+                    (click)="checkQuestion(displayQuestion.a1)">{{displayQuestion.a1}}</button>
+                    <button class="button button1"
+                    (click)="checkQuestion(displayQuestion.a2)">{{displayQuestion.a2}}</button>
+                    <button class="button button1"
+                    (click)="checkQuestion(displayQuestion.a3)">{{displayQuestion.a3}}</button>
+                    <button class="button button1"
+                    (click)="checkQuestion(displayQuestion.a4)">{{displayQuestion.a4}}</button>
+                    <div id="snackbar">Incorrect</div>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+
+</div> 

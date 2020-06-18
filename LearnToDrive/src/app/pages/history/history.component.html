@@ -1,0 +1,22 @@
+<div class="container text-center mt-5">
+  <table *ngFor='let h of ResultHistory' class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">User</th>
+        <th scope="col">Score</th>
+        <th scope="col">Type</th>
+        <th scope="col">Date dd/mm/yyyy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{h.userId}}</th>
+        <td>Your Test score was {{h.score}} / 35</td>
+        <td>The quiz was a {{h.quizType}} Test</td>
+        <td>The quiz was finshed on {{h.date |  date: 'dd/MM/yyyy hh:mm a'}}</td>
+        <td (click)="testResult(h)">See wrong answers</td>
+        
+      </tr>
+    </tbody>
+  </table>
+</div>

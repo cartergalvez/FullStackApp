@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/serivecs/data.service';
+import { DataService } from 'src/app/services/data.service';
 import { __values } from 'tslib';
 import { VirtualTimeScheduler } from 'rxjs';
 import { Router } from '@angular/router';
+import { ToastService } from 'src/app/services/toast.service';
+import { async } from '@angular/core/testing';
 
 @Component({
   selector: 'app-p-test',
@@ -10,47 +12,52 @@ import { Router } from '@angular/router';
   styleUrls: ['./p-test.component.scss']
 })
 export class PTestComponent implements OnInit {
-  displayQuestion;
+  displayQuestion: any;
+  wrongQuestion: any[] = [];
+  wrongAnswer: string[] = [];
   aCouter = 0;
-  constructor(private dServ: DataService, private router: Router) { 
-   
+  questionsList;
+
+  constructor(private dServ: DataService, private router: Router, private toast: ToastService) {
   }
 
   ngOnInit() {
-    this.displayQuestion = this.dServ.getFirstQuestion();
-    console.log(this.displayQuestion);
+    this.nextQuestion();
   }
-  
+
   nextQuestion() {
-    this.displayQuestion = this.dServ.getNextQuestions();
+    this.dServ.GetQuiz().then(res => {
+      this.questionsList = res;
+      this.displayQuestion = this.dServ.getNextQuestions(res);
+   
+    })
+    //this.displayQuestion = this.dServ.getNextQuestions();
+    // console.log(this.dServ.answeredQuestions);
   }
 
 
 
   checkQuestion(answer) {
-     
-      if (answer == this.displayQuestion.correct) {
-        this.dServ.score++
-        console.log(this.aCouter);
-        this.aCouter = this.dServ.score;
-      }else{
-        this.myToast();
-      } 
-    if(this.dServ.counter < 34){
-      this.nextQuestion();
-      }
-      else{
-        this.dServ.counter = 0;
-      this.router.navigate(['/endScreen']);
-      
-      }
+    if (answer == this.displayQuestion.correct) {
+      this.dServ.score++
+      this.toast.successToast('Correct')
+      this.aCouter = this.dServ.score;
+    } else {
+      this.dServ.wrongQuestions.push(this.displayQuestion.questions);
+      this.dServ.wrongAnswer.push(answer);
+      this.dServ.Categories.push(this.displayQuestion.categories)
+      this.toast.errorToast('Incorrect')
     }
-
-  myToast() {
-    var x = document.getElementById("snackbar");
-    x.className = "show";
-    setTimeout(function () { x.className = x.className.replace("show", ""); }, 2000);
+    if (this.dServ.counter < 34) {
+      this.nextQuestion();
+    }
+    else {
+      this.dServ.counter = 0;
+      this.router.navigate(['/endScreen']);
+    }
   }
+
+
 
 }
 

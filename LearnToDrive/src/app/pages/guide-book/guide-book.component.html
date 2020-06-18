@@ -1,19 +1,60 @@
-<div class="container">
-
+<!-- <div class="container">
     <ngb-carousel *ngIf="images">
         <ng-template ngbSlide *ngFor='let p of Pics'>
             <div class="row">
                 <div class="col">
             
                     <div class="picsum-img-wrapper">
-                        <img src="../../../assets/Pics/{{p.img}}" class="hero" alt="Random third slide">
+                        <img *ngIf="p.img !== ''" src="../../../assets/Pics/{{p?.img}}" class="hero" >
                     </div>
                 </div>
                 <div class="col">
-            
+                    <h1>{{p.Categories}}</h1>
                     <p> {{p.text}} </p>
                 </div>
             </div>
         </ng-template>   
     </ngb-carousel>
-</div> 
+</div>  -->
+
+<div class="container-fluid main">
+    <div class="sidenav">
+        <a (click)="LawsAndRules()">Law and Rules</a>
+        <a (click)="getVISUALSEARCH()">VISUAL SEARCH</a>
+        <a (click)="laneControl()">Lane Control</a>
+        <a (click)="turn()">Turns</a>
+        <a (click)="parking()">Parking</a>
+        <a (click)="SafeDriving()">Safe Driving Practices Signaling</a>
+        <a (click)="VehiclePosittoning()">Vehicle Posittoning</a>
+        <a (click)="SharingTheRoad()">Sharing The Road</a>
+        <a (click)="SpecialDrivingSituations()">Special Driving Situations</a>
+        <a (click)="alcoholAndDrugs()">Alcohol And Drugs</a>
+      </div>
+<div *ngIf="Pics" class="row mt-5" >
+    <div class="col-8 offset-3" >
+        <div class="card" style="height: 100%;">
+            <div class="row d-flex align-self-center">
+                <div class="col">
+                    <img class="fixImg" *ngIf="Pics.img !== ''" src="../../../assets/Pics/{{Pics?.img}}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4>{{Pics.Categories}}</h4>
+                    <p *ngFor="let text of Pics.text">{{text}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="row mb-5">
+        <div class="col text-center mr-5">
+            <button class="btn btn-primary" (click)="pervPage()">PrvPage</button>
+        </div>
+        <div class="col-3 ml-5 align-self-end">
+            <button class="btn btn-primary" (click)="nextPage()">NextPage</button>
+        </div>
+    </div>
+</div>
+
+

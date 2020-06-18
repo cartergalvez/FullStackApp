@@ -1,4 +1,5 @@
 export interface BTW {
-    img:string;
+    img?:string;
     text: string;
+    Categories: string;
 }

@@ -1,0 +1,24 @@
+<div *ngIf="testResult.categories" class="container">
+    <div class="row">
+        <div *ngFor="let test of testResult.categories; let i = index" class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <b>Categories: </b>
+                            <p>{{testResult.categories[i]}}</p>
+                        </div>
+                        <div class="col">
+                            <b>Wrong Question: </b>
+                            <p>{{testResult.wrongQuestions[i]}}</p>
+                            <div class="col">
+                                <b>Wrong Answer: </b>
+                                <p>{{testResult.wrongAnswer[i]}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

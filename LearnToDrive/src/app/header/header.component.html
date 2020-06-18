@@ -1,20 +1,44 @@
-
-<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+<!-- <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
     <li [ngbNavItem]="1">
-        <a ngbNavLink  routerLink="/home">Home</a>
-     
+        <a ngbNavLink routerLink="/home">Home</a>
+
     </li>
-  
-    <li [ngbNavItem]="3">
+
+    <li [ngbNavItem]="2">
         <a ngbNavLink routerLink="/TestPage">Test</a>
-        
+
     </li>
 
-    <li [ngbNavItem]="4">
+    <li [ngbNavItem]="3">
         <a ngbNavLink routerLink="/GuideBook">GuideBook</a>
-    
+
     </li>
-</ul>
+    <li [ngbNavItem]="5">
+        <a ngbNavLink routerLink="/SignUp">Create Account</a>
 
-<div [ngbNavOutlet]="nav" class="mt-2"></div>
+    </li>
 
+    <li [ngbNavItem]="6">
+        <a ngbNavLink routerLink="/History">History</a>
+
+    </li>
+    <li [ngbNavItem]="4">
+        <a *ngIf="apiKey === null" ngbNavLink routerLink="/Login">Login</a>
+
+    </li>
+    <li [ngbNavItem]="4">
+        <a *ngIf="apiKey !== null" ngbNavLink (click)="logOut()">Log out</a>
+
+    </li>
+</ul> -->
+<nav mat-tab-nav-bar>
+<a mat-tab-link
+*ngFor="let link of navLinks"
+[routerLink]="link.link"
+routerLinkActive #rla="routerLinkActive"
+[active]="rla.isActive">
+{{link.label}}
+</a>
+<a *ngIf="apiKey === null" mat-tab-link routerLink="/Login">Login</a>
+<a class="red" mat-tab-link *ngIf="apiKey !== null" (click)="logOut()">LogOut</a>    
+</nav>
